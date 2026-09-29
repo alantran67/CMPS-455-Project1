@@ -10,10 +10,10 @@ This file tracks each team member's responsibilities, implementation progress, t
 
 | Member | Primary Responsibility | Branch | Status |
 |---|---|---|---|
-| Alan Tran | Dining Philosophers | `alan-dining-philosophers` | Not Started |
+| Alan Tran | Dining Philosophers | `alan-dining-philosophers` | In Progress |
 | Hans Trosclair | Readers-Writers | `hans-readers-writers` | Not Started |
 | Olivia Deshotel | Final Report / Documentation | `olivia-report` | Not Started |
-| Brendan Daigle | Command-Line Interface / Integration | `brendan-command-line` | Not Started |
+| Brendan Daigle | Command-Line Interface / Integration | `brendan-command-line` | In Progress |
 
 ### Status Values
 
