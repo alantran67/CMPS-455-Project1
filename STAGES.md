@@ -12,7 +12,7 @@ This file tracks each team member's responsibilities, implementation progress, t
 |---|---|---|---|
 | Alan Tran | Dining Philosophers | `alan-dining-philosophers` | In Progress |
 | Hans Trosclair | Readers-Writers | `hans-readers-writers` | Not Started |
-| Olivia Deshotel | Final Report / Documentation | `olivia-report` | Not Started |
+| Olivia Deshotel | Final Report / Documentation | `olivia-report` | In Progress |
 | Brendan Daigle | Command-Line Interface / Integration | `brendan-command-line` | In Progress |
 
 ### Status Values
