@@ -1,0 +1,12 @@
+# Final Report for Project 1
+
+Group Members: Alan Tran C00513531, Brenden Daigle C00529506, Hans Trosclair C00472037, Olivia Deshotel C00486640
+
+The following document is a report on the project's progress and implementation.
+
+## Brenden Daigle, Command-Line Interface
+---
+For the command-line integration, Brenden created an src folder with a runnable main class. From there, he created a new application (configuration) used to provide command-line inputs consistent with what the project specified. The taskNumber int variable would specify which task (1 or 2) to run later, but it is initialized at -1 as a sentinel variable. The for loop first checks that “-A” is in the first spot of the arg; if not, it prints an error message and returns. Next, the program attempts to parse the value after -A, and if it fails, it prints an error message confirming that the value needs to be an integer. If the value was presented as an integer, but not 1 or 2, the program later handles that case by specifying so. After completing the for loop, the listed taskNumber will determine which class to run: the diningPhilosophers (1) or readersWriters (2).
+There are multiple cases in which error-handling is covered. First, if there is a missing -A or an invalid argument, the program recognizes this, since it would have not finished the for loop with a changed sentinel value. In other words, taskNumber still being -1 would signal the program to output the error message “Error: Invalid or missing -A argument. Use: -A 1 (Dining Philosophers) or -A 2 (Readers Writers)”. The program also recognizes when there isn’t a value after -A, in which case it notes that -A requires a value (1 or 2). Lastly, if the user did provide input after -A, but it was not an integer, the program recognizes this and reminds the user that the next value must be an integer.
+The integration with the other tasks was relatively simple, since our team members covering tasks 1 and 2 wrote their respective programs in separate classes. Therefore, all that was needed to run their programs was a call to the class itself. After the taskNumber is changed to 1 or 2, this signals the program to run whichever class is labeled with that number. For instance, if after the for loop a value of 1 is given to taskNumber, this executes Alan’s “run()” function within his program class.
+---
