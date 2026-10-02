@@ -13,7 +13,7 @@ This file tracks each team member's responsibilities, implementation progress, t
 | Alan Tran | Dining Philosophers | `alan-dining-philosophers` | In Progress |
 | Hans Trosclair | Readers-Writers | `hans-readers-writers` | Not Started |
 | Olivia Deshotel | Final Report / Documentation | `olivia-report` | In Progress |
-| Brendan Daigle | Command-Line Interface / Integration | `brendan-command-line` | In Progress |
+| Brenden Daigle | Command-Line Interface / Integration | `brenden-command-line` | In Progress |
 
 ### Status Values
 
@@ -156,7 +156,7 @@ The exact class names may change, but each synchronization problem should stay s
 
 ---
 
-# Stage 4 — Brendan Daigle: Command-Line Interface
+# Stage 4 — Brenden Daigle: Command-Line Interface
 
 ## Required Command-Line Behavior
 
@@ -301,7 +301,7 @@ The most important requirement is that invalid input does **not** crash the prog
 - Edge-case results
 - Large-`N` observations
 
-### Brendan Provides
+### Brenden Provides
 
 - Command-line implementation explanation
 - Error-handling behavior
@@ -326,7 +326,7 @@ Recommended order:
 
 1. Alan — Dining Philosophers
 2. Hans — Readers-Writers
-3. Brendan — Command-Line Integration
+3. Brenden — Command-Line Integration
 4. Olivia — Final Report
 
 Brendan should integrate after Alan and Hans have stable implementations because the command-line code depends on both tasks.
@@ -335,7 +335,7 @@ Brendan should integrate after Alan and Hans have stable implementations because
 
 - [ ] Alan's branch merged
 - [ ] Hans's branch merged
-- [ ] Brendan's branch merged
+- [ ] Brenden's branch merged
 - [ ] Olivia's report merged/added
 - [ ] `Main.java` correctly selects Task 1 or Task 2
 - [ ] Project compiles from a clean checkout
