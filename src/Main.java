@@ -23,18 +23,11 @@ public class Main {
 
         // Cases for each Task (1 or 2)
         if (taskNumber == 1) {
-            runDiningPhilosophers();
+            DiningPhilosophers.run();
         } else if (taskNumber == 2) {
-            runReadersWriters();
+            ReadWrite.run();
         } else {
             System.out.println("Error: Invalid or missing -A argument. Use: -A 1 (Dining Philosophers) or -A 2 (Readers Writers)");
         }
-    }
-    private static void runDiningPhilosophers() {
-        DiningPhilosophers.run();
-    }
-
-    private static void runReadersWriters() {
-        System.out.println("Running Readers Writers"); //Replace and put Task 2 call here
     }
 }
