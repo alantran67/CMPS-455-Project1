@@ -6,6 +6,7 @@ public class ReadWrite {
     static int numReaders;
     static int numWriters;
     static int maxReaders;
+    static int writersFinished = 0;
 
     // Number of readers that have completed the current batch
     static int readersCompleted = 0;
@@ -61,10 +62,7 @@ public class ReadWrite {
 
                     readersCompleted++;
 
-                    /*
-                     * Once N readers have completed,
-                     * allow a coordinator to run.
-                     */
+                    // Once N readers have completed, allow a writer to run.
                     if (readersCompleted == maxReaders) {
 
                         readersCompleted = 0;
@@ -94,15 +92,21 @@ public class ReadWrite {
 
                     System.out.println("W" + id + " began writing");
 
-                    // Simulate coordination
+                    // Simulate writing
                     Thread.sleep(1000);
 
                     System.out.println("W" + id + " finished writing");
 
-                    /*
-                     * Allow the next N readers to run.
-                     */
-                    readerStart.release(maxReaders);
+                    mutex.acquire();
+
+                    writersFinished++;
+
+                    // Only start more readers if another writer is available
+                    if (writersFinished < numWriters) {
+                        readerStart.release(maxReaders);
+                    }
+
+                    mutex.release();
 
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
@@ -119,21 +123,23 @@ public class ReadWrite {
             writer.start();
         }
 
-        // Wait for readers
-        for (Thread reader : readers) {
-
-            try {
-                reader.join();
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-
         // Wait for writers
         for (Thread writer : writers) {
 
             try {
                 writer.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        for (Thread reader : readers) {
+            reader.interrupt();
+        }
+
+        for (Thread reader : readers) {
+            try {
+                reader.join();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
