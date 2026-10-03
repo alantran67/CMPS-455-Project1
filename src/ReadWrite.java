@@ -146,7 +146,7 @@ public class ReadWrite {
         }
 
         System.out.println("All writers have finished.");
-        System.out.println("Program Exiting.");
+        System.out.println(" Program Exiting.");
 
         scanner.close();
     }
